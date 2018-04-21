@@ -1,9 +1,12 @@
+<!-- On submit, Open channel here  -->
 <template>
   <div class="outer">
   	<div class="SHAPE">
   		<img src="../assets/left_shape.svg" class="left-svg">
   	</div>
-  	<div class="title">Unlock with Code</div>
+  	<div class="center-align">
+  		<div class="title">Unlock with Code</div>
+  	</div>
   	<div class="margin-top-53">
 	  	<ae-input v-model="value" >
 	        <ae-button slot="right" type="exciting" size="small" @click="value = ''">

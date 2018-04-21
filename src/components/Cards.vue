@@ -2,9 +2,11 @@
   <div class="padding-sides-10">
   	<div class="title">
   		<span>E-BIKE Rental</span>
-  		<button class="qr-btn">
-  			<img src="../assets/qr.svg" class="qr-img">
-  		</button>
+  		<router-link to="/scanQR">
+	  		<button class="qr-btn">
+	  			<img src="../assets/qr.svg" class="qr-img">
+	  		</button>
+	  	</router-link>
   	</div>
     <card v-for="task in tasks" date="some meters away">
 		{{task.description}}
@@ -67,4 +69,5 @@ export default {
 		padding-left: 10px;
 		padding-right: 10px;
 	}
+
 </style>

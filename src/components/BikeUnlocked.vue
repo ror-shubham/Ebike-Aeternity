@@ -1,7 +1,10 @@
+<!-- On submit, Open channel here  -->
 <template>
   <div class="outer">
   	
-  	<div class="title">E-BIKE 1</div>
+  	<div class="center-align">
+  		<div class="title">E-BIKE 1</div>
+  	</div>
 
   	<div class="text-2">Enjoy the ride!</div>
 
@@ -163,6 +166,12 @@ export default {
 
 	.margin-top-86{
 		margin-top: 86px;
+	}
+
+	.center-align{
+		display: flex;
+		align-items: center;
+		justify-content: center;
 	}
 
 	

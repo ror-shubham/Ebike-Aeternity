@@ -1,7 +1,9 @@
 <template>
   <div class="outer">
   	
-  	<div class="title">E-BIKE 1</div>
+  	<div class="center-align">
+  		<div class="title">E-BIKE 1</div>
+  	</div>
 
   	<div class="text-2">You locked your bike</div>
 

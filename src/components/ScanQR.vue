@@ -3,10 +3,12 @@
   	<div class="SHAPE">
   		<img src="../assets/left_shape.svg" class="left-svg">
   	</div>
-  	<div class="title">E-BIKE 1</div>
+  	<div class="title center-align">E-BIKE 1</div>
   	<div class="Scan-the-QR-Code-of">Scan the QR Code of the Bike to unlock</div>
     <img class="camera" src="https://camo.githubusercontent.com/c79f9b11d3b822c9648fd8e0fc9a646c8ac23f0b/68747470733a2f2f7261772e6769746875622e636f6d2f6d65746566696368612f6469616772616d732d7172636f64652f6d61737465722f6578616d706c65732f7172636f64652e706e67">
-    <ae-button type="dramatic" block class="btn">Unlock with code</ae-button>
+    <router-link to="/unlockWithCode">
+    	<ae-button type="dramatic" block class="btn">Unlock with code</ae-button>
+    </router-link>
   </div>
 </template>
 
@@ -45,7 +47,6 @@ export default {
 	}
 
 	.title{
-		width: 278px;
 	  height: 28px;
 	  font-family: Roboto;
 	  font-size: 24px;
@@ -73,6 +74,12 @@ export default {
   	width: 234px;
   	height: 234px;
   	margin: 15%;
+	}
+
+	.center-align{
+		display: flex;
+		align-items: center;
+		justify-content: center;
 	}
 
 
