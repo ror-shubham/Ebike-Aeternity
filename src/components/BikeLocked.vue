@@ -22,20 +22,41 @@
 
   	<ae-divider></ae-divider>
 	
-	<ae-button type="dramatic" block class="btn margin-top-86">End Ride & Pay</ae-button>
-  
+	<ae-button type="dramatic" block class="btn margin-top-86" @click="modalVisible=true">
+		End Ride & Pay
+	</ae-button>
 
-  	
-		
+	<ae-modal
+    v-if="modalVisible"
+    @close="modalVisible = false"
+    title="Sign Transaction"
+  >
+  	<!-- making the whole image a button for now  -->
+  	<button @click="redirectToHome">
+  		<img src="@/assets/signTransaction.png" alt="" class="sign-image">
+  	</button>
+  </ae-modal>
+
+  
   </div>
 </template>
 
 <script>
-import { AeButton, AeInput, AeIcon, AeDivider } from '@aeternity/aepp-components'
+import { AeButton, AeInput, AeIcon, AeDivider, AeModal } from '@aeternity/aepp-components'
 export default {
   name: 'bikeLocked',
+  data (){
+  	return{
+  		modalVisible: false,
+  	}
+  }, 
   components: {
-  	AeButton, AeInput, AeIcon, AeDivider
+  	AeButton, AeInput, AeIcon, AeDivider, AeModal
+  },
+  methods: {
+  	redirectToHome(){
+  		this.$router.push('/') 
+  	}
   }
   
 }
@@ -168,8 +189,11 @@ export default {
 	.margin-top-86{
 		margin-top: 86px;
 	}
-
 	
+	@media screen and (max-width: 600px) {
+		.sign-image{
+			width: 80vw;
+		}
+	}
 	
-
 </style>

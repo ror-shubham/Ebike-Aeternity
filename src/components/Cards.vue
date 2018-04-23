@@ -1,6 +1,6 @@
 <template>
   <div class="padding-sides-10">
-  	<div class="title">
+  	<div class="title-Cards">
   		<span>E-BIKE Rental</span>
   		<router-link to="/scanQR">
 	  		<button class="qr-btn">
@@ -8,9 +8,11 @@
 	  		</button>
 	  	</router-link>
   	</div>
-    <card v-for="task in tasks" date="some meters away">
-		{{task.description}}
-	</card>
+    <a href="/#/scanQR">
+    	<card v-for="task in tasks" date="some meters away">
+				{{task.description}}
+			</card>
+	</a>
   </div>
 </template>
 
@@ -37,7 +39,7 @@ export default {
 </script>
 
 <style type="text/css">
-	.title {
+	.title-Cards {
 	  height: 28px;
 	  font-family: Roboto;
 	  font-size: 24px;
@@ -68,6 +70,11 @@ export default {
 	.padding-sides-10{
 		padding-left: 10px;
 		padding-right: 10px;
+	}
+
+	a{
+		text-decoration: none;
+		color: #1e1e1e;
 	}
 
 </style>
