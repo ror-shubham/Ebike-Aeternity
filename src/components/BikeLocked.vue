@@ -25,6 +25,20 @@
 	<ae-button type="dramatic" block class="btn margin-top-86" @click="modalVisible=true">
 		End Ride & Pay
 	</ae-button>
+	<!-- 
+		SMART CONTRACT-
+			Close state channel here
+				OffChain
+				5. closing_created(by user)
+				6. closing_signed(by e-bike renter)
+				//app waits for some time, if no closing_signed is recieved, it closes the channel unilaterally 
+				
+				OnChain
+				//if closing_signed recieved
+				7. channel_close_mutual(by user or renter)
+				//else
+				7. channel_close_solo(by user)
+	 -->
 
 	<ae-modal
     v-if="modalVisible"

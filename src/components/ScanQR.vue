@@ -7,6 +7,23 @@
   	
   	<div class="Scan-the-QR-Code-of">Scan the QR Code of the Bike to unlock</div>
     <img class="camera" src="https://camo.githubusercontent.com/c79f9b11d3b822c9648fd8e0fc9a646c8ac23f0b/68747470733a2f2f7261772e6769746875622e636f6d2f6d65746566696368612f6469616772616d732d7172636f64652f6d61737465722f6578616d706c65732f7172636f64652e706e67">
+    <!-- SMART CONTRACT- 
+			Open state channel here.
+				OffChain
+			  1. channel_open(by user) -> channel_accept (by e-bike renter, if everything is good)
+			  2. funding_created(by user) -> funding_signed(by e-bike renter)
+			  //transaction pop-up does the signing of funding_created
+			  
+			  OnChain
+			  3. channel_create (by user or renter)
+			  //default can be set to renter creating the channel as soon as it sends funding_signed
+
+			  Offchain
+			  4. state_update (signed by both every 2 or 5 minutes)
+			  // wallet needs to have a protocol to authorize signing a specific amount of tokens
+			  //on user's behalf at given time interval.
+
+		 -->
     <router-link to="/unlockWithCode">
     	<ae-button type="dramatic" block class="btn">Unlock with code</ae-button>
     </router-link>

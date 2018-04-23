@@ -27,6 +27,23 @@
       >
       	<!-- making the whole image a button for now  -->
       	<button @click="redirectToUnlocked">
+      		<!-- SMART CONTRACT- 
+      			Open state channel here.
+							OffChain
+      			  1. channel_open(by user) -> channel_accept (by e-bike renter, if everything is good)
+      			  2. funding_created(by user) -> funding_signed(by e-bike renter)
+      			  //transaction pop-up does the signing of funding_created
+      			  
+      			  OnChain
+      			  3. channel_create (by user or renter)
+      			  //default can be set to renter creating the channel as soon as it sends funding_signed
+
+      			  Offchain
+      			  4. state_update (signed by both every 2 or 5 minutes)
+      			  // wallet needs to have a protocol to authorize signing a specific amount of tokens
+      			  //on user's behalf at given time interval.
+
+      		 -->
       		<img src="@/assets/signTransaction.png" alt="" class="sign-image">
       	</button>
       </ae-modal>
@@ -103,8 +120,8 @@ export default {
   watch: {
     code: function (val) {
       if(val.length==6){
-      	this.modalVisible = true
-      	//this.$router.push('bikeUnlocked') 
+      	this.modalVisible = true;
+      	this.code = ''
       }
     }
   },
