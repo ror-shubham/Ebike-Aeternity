@@ -25,7 +25,9 @@
 
 		 -->
     <router-link to="/unlockWithCode">
-    	<ae-button type="dramatic" block class="btn">Unlock with code</ae-button>
+    	<div class="center-align">
+    		<ae-button type="dramatic" block class="max-width-500">Unlock with code</ae-button>
+    	</div>
     </router-link>
   </div>
 </template>
@@ -98,6 +100,10 @@ export default {
 		display: flex;
 		align-items: center;
 		justify-content: center;
+	}
+
+	.max-width-500{
+		max-width: 500px;
 	}
 
 

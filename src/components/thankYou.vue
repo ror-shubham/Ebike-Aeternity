@@ -1,14 +1,7 @@
-<!-- On submit, Open channel here  -->
 <template>
   <div class="outer">
   	
-  	<div class="center-align">
-  		<div class="title">E-BIKE 1</div>
-  	</div>
-
-  	<div class="text-2">Enjoy the ride!</div>
-
-  	<div class="text-3">But keep your eyes on the road</div>
+  	<div class="text-2">Thanks for riding with us</div>
 
   	<ae-divider></ae-divider>
 
@@ -17,34 +10,37 @@
   		<div class="number-1">30</div>
   		<div class="text-5">Minutes</div>
   		<div> 
-  			<div class="text-align-center"><span class="text-6">~ 25</span><span class="text-7">AE </span></div>
+  			<div class="text-align-center"><span class="text-6">25</span><span class="text-7">AE </span></div>
   		</div>
   	</div>
 
   	<ae-divider></ae-divider>
-
-  	<div class="text-3 margin-top-86">Lock the bike in order to end the ride</div>
-
-	<div class="center-align">
-  		<ae-button type="dramatic" block class="max-width-500" @click="redirectToLocked">
-  			Lock from App
-  		</ae-button>
-  	</div>
-		
+	
+	<div class="center-align">	
+		<ae-button type="dramatic" block class="max-width-500 margin-top-86" @click="redirectToHome">
+			Go to Home
+		</ae-button>
+	</div>
+  
   </div>
 </template>
 
 <script>
-import { AeButton, AeInput, AeIcon, AeDivider } from '@aeternity/aepp-components'
+import { AeButton, AeDivider} from '@aeternity/aepp-components'
 export default {
-  name: 'bikeUnlocked',
+  name: 'thankYou',
+  data (){
+  	return{
+  		modalVisible: false,
+  	}
+  }, 
   components: {
-  	AeButton, AeInput, AeIcon, AeDivider
+  	AeButton, AeDivider
   },
   methods: {
-  	redirectToLocked(){
-  		this.$router.push('bikeLocked') 
-  	},
+  	redirectToHome(){
+  		this.$router.push('/') 
+  	}
   }
   
 }
@@ -54,21 +50,6 @@ export default {
 	.outer{
 		position: relative;
 		margin: 5% 8%;
-	}
-
-	.title{
-	  height: 28px;
-	  font-family: Roboto;
-	  font-size: 24px;
-	  font-weight: bold;
-	  font-style: normal;
-	  font-stretch: normal;
-	  line-height: normal;
-	  letter-spacing: normal;
-	  text-align: center;
-	  color: #1e1e1e;
-	  color: var(--black);
-	  text-align: center;
 	}
 
 	.text-2 {
@@ -86,34 +67,6 @@ export default {
 	  margin-top: 40px;
 	}
 
-	.text-3 {
-	  height: 28px;
-	  font-family: Roboto;
-	  font-size: 18px;
-	  font-weight: normal;
-	  font-style: normal;
-	  font-stretch: normal;
-	  line-height: 1.56;
-	  letter-spacing: normal;
-	  text-align: center;
-	  color: #1e1e1e;
-	  color: var(--black);
-	  margin-top: 5px;
-	  margin-bottom: 54px; 
-	}
-
-	.text-4 {
-	  height: 16px;
-	  font-family: Roboto;
-	  font-size: 12px;
-	  font-weight: 500;
-	  font-style: normal;
-	  font-stretch: normal;
-	  line-height: 1.33;
-	  letter-spacing: 0.3px;
-	  text-align: center;
-	  color: #989898;
-	}
 
 	.number-1{
 	  height: 94px;
@@ -177,19 +130,16 @@ export default {
 	.margin-top-86{
 		margin-top: 86px;
 	}
+	
+
+	.max-width-500{
+		max-width: 500px;
+	}
 
 	.center-align{
 		display: flex;
 		align-items: center;
 		justify-content: center;
 	}
-
-	.margin-top-86{
-		margin-top: 86px;
-	}
-
-	.max-width-500{
-		max-width: 500px;
-	}
-
+	
 </style>

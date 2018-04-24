@@ -22,9 +22,11 @@
 
   	<ae-divider></ae-divider>
 	
-	<ae-button type="dramatic" block class="btn margin-top-86" @click="modalVisible=true">
-		End Ride & Pay
-	</ae-button>
+	<div class="center-align">
+		<ae-button type="dramatic" block class="btn max-width-500 margin-top-86" @click="modalVisible=true">
+			End Ride & Pay
+		</ae-button>
+	</div>
 	<!-- 
 		SMART CONTRACT-
 			Close state channel here
@@ -46,7 +48,7 @@
     title="Sign Transaction"
   >
   	<!-- making the whole image a button for now  -->
-  	<button @click="redirectToHome">
+  	<button @click="redirectToThankYou">
   		<img src="@/assets/signTransaction.png" alt="" class="sign-image">
   	</button>
   </ae-modal>
@@ -68,8 +70,8 @@ export default {
   	AeButton, AeInput, AeIcon, AeDivider, AeModal
   },
   methods: {
-  	redirectToHome(){
-  		this.$router.push('/') 
+  	redirectToThankYou(){
+  		this.$router.push('thankYou') 
   	}
   }
   
@@ -208,6 +210,10 @@ export default {
 		.sign-image{
 			width: 80vw;
 		}
+	}
+
+	.max-width-500{
+		max-width: 500px;
 	}
 	
 </style>
